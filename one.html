@@ -22,7 +22,7 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             text-align: center;
             margin-top: 20px;
-            font-size: 28px;
+            font-size: 2rem; /* Relative font size for scaling */
             font-weight: bold;
             width: fit-content;
         }
@@ -35,12 +35,14 @@
         }
         .button-row {
             display: flex;
+            flex-wrap: wrap; /* Ensures buttons wrap on small screens */
             gap: 15px;
+            justify-content: center; /* Center-align buttons */
         }
         .button-row button {
-            width: 250px;
-            padding: 20px 40px;
-            font-size: 20px;
+            width: 200px; /* Default width for larger screens */
+            padding: 15px 30px;
+            font-size: 1.2rem; /* Relative font size */
             cursor: pointer;
             text-align: center;
             border: none;
@@ -48,31 +50,54 @@
             color: #fff;
             border-radius: 10px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .button-row button:hover {
-            background-color: #555;
+            background-color: white; /* Button background changes to white */
+            color: black; /* Text color changes to black */
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        /* Apply hover effect for sub-text (number) */
+        .button-row button:hover .sub-text {
+            color: black; /* Change sub-text color to black on hover */
         }
         /* Styling for Custom Buttons */
         .button-row .custom-button {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 40px;
+            padding: 15px 30px;
         }
         .button-row .custom-button .main-text {
-            font-size: 24px;
+            font-size: 1.2rem; /* Relative size */
             font-weight: bold;
         }
         .button-row .custom-button .sub-text {
-            font-size: 12px;
+            font-size: 0.8rem; /* Relative size */
             color: #ccc;
             margin-top: 5px;
         }
-        /* Remove the blue underline (outline) and text decoration from anchor tags */
         a {
             text-decoration: none; /* Removes underline */
             outline: none; /* Removes blue outline */
+        }
+        /* Media query for smaller screens (mobile devices) */
+        @media (max-width: 600px) {
+            .heading-box {
+                font-size: 1.5rem; /* Smaller font size */
+                padding: 10px 20px; /* Adjust padding */
+            }
+            .button-row button {
+                width: 120px; /* Smaller width */
+                padding: 10px 15px; /* Adjust padding */
+                font-size: 1rem; /* Smaller font size */
+            }
+            .button-row .custom-button .main-text {
+                font-size: 1rem; /* Smaller size */
+            }
+            .button-row .custom-button .sub-text {
+                font-size: 0.7rem; /* Smaller size */
+            }
         }
     </style>
 </head>
@@ -98,4 +123,3 @@
     </div>
 </body>
 </html>
-
